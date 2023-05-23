@@ -1,0 +1,35 @@
+{
+  "name": "photobox",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "npx prettier -w .",
+    "db-types": "npx @rmp135/sql-ts -c sqlts.config.json && npx prettier -w ./src/types/database.d.ts"
+  },
+  "dependencies": {
+    "@mantine/core": "^6.0.11",
+    "@mantine/dropzone": "^6.0.11",
+    "@mantine/hooks": "^6.0.11",
+    "@mantine/modals": "^6.0.11",
+    "@mantine/notifications": "^6.0.11",
+    "@tabler/icons-react": "^2.20.0",
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "knex": "^2.4.2",
+    "next": "13.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "serverless-mysql": "^1.5.5",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@rmp135/sql-ts": "^1.16.0"
+  }
+}

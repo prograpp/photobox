@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/website/.next
+/website/build
+/website/node_modules
+
+/website/.env*.local
+/website/next-env.d.ts
+
+/website/sqlts.config.json
