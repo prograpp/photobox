@@ -4,6 +4,7 @@ import mime from "mime";
 import Image from "next/image";
 import path from "path";
 import React, { useMemo, useState } from "react";
+import ReactPlayer from "react-player";
 
 type Props = {
   path: string[];
@@ -29,9 +30,23 @@ export const Component_Previews_Image: React.FC<Props> = (props) => {
             <IconX />
           </ActionIcon>
 
-          <Center w="100%" h="100%">
-            <img src={`/api/image/full/${path.join(...props.path, props.name)}`} style={{ maxWidth: "100vw", maxHeight: "100vh" }} alt={props.name} />
-          </Center>
+          {mediaType === "image" && (
+            <Center w="100%" h="100%">
+              <img
+                src={`/api/image/full/${path.join(...props.path, props.name)}`}
+                style={{ maxWidth: "100vw", maxHeight: "100vh" }}
+                alt={props.name}
+              />
+            </Center>
+          )}
+
+          {mediaType === "video" && (
+            <Center w="100%" h="100%">
+              <video controls style={{ maxWidth: "100vw", maxHeight: "100vh" }}>
+                <source src={`/api/image/full/${path.join(...props.path, props.name)}`} type={mime.getType(props.name) ?? undefined} />
+              </video>
+            </Center>
+          )}
         </Box>
       </Portal>
     );
@@ -43,7 +58,7 @@ export const Component_Previews_Image: React.FC<Props> = (props) => {
         width={200}
         height={200}
         src={`/api/image/preview/${path.join(...props.path, props.name)}`}
-        loader={({ src }) => src}
+        unoptimized
         alt={props.name}
         style={{ borderRadius: "5px", cursor: "pointer" }}
         onClick={() => setFullScreen(true)}
@@ -53,7 +68,7 @@ export const Component_Previews_Image: React.FC<Props> = (props) => {
 
   if (mediaType === "video") {
     return (
-      <Box pos="relative" w={200} h={200}>
+      <Box pos="relative" w={200} h={200} style={{ borderRadius: "5px", cursor: "pointer" }} onClick={() => setFullScreen(true)}>
         <Center pos="absolute" top={0} left={0} w="100%" h="100%">
           <IconVideo size="150px" color="white" />
         </Center>

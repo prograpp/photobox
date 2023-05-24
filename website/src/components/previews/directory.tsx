@@ -36,55 +36,25 @@ export const Component_Previews_Directory: React.FC<Props> = (props) => {
         )}
 
         {props.directory.previews.length === 1 && (
-          <Image
-            width={200}
-            height={200}
-            src={`/api/image/preview/${props.directory.previews[0]}`}
-            loader={({ src }) => src}
-            alt={props.directory.name}
-          />
+          <Image width={200} height={200} src={`/api/image/preview/${props.directory.previews[0]}`} unoptimized alt={props.directory.name} />
         )}
 
         {props.directory.previews.length >= 2 && (
           <>
             <Box pos="absolute" top={0} left={0}>
-              <Image
-                width={100}
-                height={100}
-                src={`/api/image/preview/${props.directory.previews[0]}`}
-                loader={({ src }) => src}
-                alt={props.directory.name}
-              />
+              <Image width={100} height={100} src={`/api/image/preview/${props.directory.previews[0]}`} unoptimized alt={props.directory.name} />
             </Box>
             <Box pos="absolute" top={0} left={100}>
-              <Image
-                width={100}
-                height={100}
-                src={`/api/image/preview/${props.directory.previews[1]}`}
-                loader={({ src }) => src}
-                alt={props.directory.name}
-              />
+              <Image width={100} height={100} src={`/api/image/preview/${props.directory.previews[1]}`} unoptimized alt={props.directory.name} />
             </Box>
             {props.directory.previews.length >= 3 && (
               <Box pos="absolute" top={100} left={0}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={`/api/image/preview/${props.directory.previews[2]}`}
-                  loader={({ src }) => src}
-                  alt={props.directory.name}
-                />
+                <Image width={100} height={100} src={`/api/image/preview/${props.directory.previews[2]}`} unoptimized alt={props.directory.name} />
               </Box>
             )}
             {props.directory.previews.length >= 4 && (
               <Box pos="absolute" top={100} left={100}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={`/api/image/preview/${props.directory.previews[3]}`}
-                  loader={({ src }) => src}
-                  alt={props.directory.name}
-                />
+                <Image width={100} height={100} src={`/api/image/preview/${props.directory.previews[3]}`} unoptimized alt={props.directory.name} />
               </Box>
             )}
           </>
