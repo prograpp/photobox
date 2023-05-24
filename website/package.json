@@ -21,21 +21,25 @@
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "axios": "^1.4.0",
+    "dayjs": "^1.11.7",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "iron-session": "^6.3.1",
     "knex": "^2.4.2",
+    "leaflet": "^1.9.4",
     "mime": "^3.0.0",
     "next": "13.4.3",
     "next-superjson": "^0.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1",
     "serverless-mysql": "^1.5.5",
     "sharp": "^0.32.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@rmp135/sql-ts": "^1.16.0",
+    "@types/leaflet": "^1.9.3",
     "@types/mime": "^3.0.1"
   }
 }

@@ -1,5 +1,5 @@
 import { Component_Previews_Directory, PreviewDirectory } from "@/components/previews/directory";
-import { Component_Previews_Image } from "@/components/previews/image";
+import { Component_Previews_Media } from "@/components/previews/media";
 import { getDirectoryContent, traverseFiles } from "@/lib/fs-tools";
 import { Alert, Anchor, Box, Breadcrumbs, Center, Divider, Group, Stack, Text } from "@mantine/core";
 import { GetServerSideProps } from "next";
@@ -72,7 +72,7 @@ const Page: React.FC<Props> = (props) => {
             ))}
 
             {props.files.map((file) => (
-              <Component_Previews_Image key={file} path={props.path} name={file} />
+              <Component_Previews_Media key={file} path={props.path} name={file} />
             ))}
           </Group>
         </Stack>
