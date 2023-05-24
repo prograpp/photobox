@@ -8,9 +8,9 @@ export interface DatabaseAlbums {
   title: string;
 }
 export interface DatabasePhotos {
-  album: number;
-  created: Date;
+  album?: number | null;
+  created?: Date | null;
   hash: string;
-  height: number;
-  width: number;
+  height?: number | null;
+  width?: number | null;
 }

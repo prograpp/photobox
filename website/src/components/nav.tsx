@@ -3,17 +3,19 @@ import { IconAlbum, IconPhoto, IconSettings, IconUser, IconUsers } from "@tabler
 import Link from "next/link";
 import React from "react";
 
-type NavigationItem = {
-  icon: React.ReactNode;
-  href: string;
-  label?: string;
-} | "divider";
+type NavigationItem =
+  | {
+      icon: React.ReactNode;
+      href: string;
+      label?: string;
+    }
+  | "divider";
 
 export const Component_Nav: React.FC<{}> = () => {
   const navigation: NavigationItem[] = [
     {
       icon: <IconPhoto size="2.125rem" />,
-      href: "/",
+      href: "/photos",
       label: "Photos",
     },
     {
@@ -32,7 +34,7 @@ export const Component_Nav: React.FC<{}> = () => {
       href: "/settings",
       label: "Settings",
     },
-  ]
+  ];
 
   return (
     <Box sx={{ height: "calc(100vh - 16px)" }}>
@@ -51,10 +53,16 @@ const NavigationItem: React.FC<{ item: NavigationItem }> = ({ item }) => {
   }
 
   const button = (
-    <ActionIcon size="xl" component={Link} href={item.href}>{item.icon}</ActionIcon>
+    <ActionIcon size="xl" component={Link} href={item.href}>
+      {item.icon}
+    </ActionIcon>
   );
 
   return item.label ? (
-    <Tooltip label={item.label} position="right" children={button} />
-  ) : button;
+    <Tooltip label={item.label} position="right">
+      {button}
+    </Tooltip>
+  ) : (
+    button
+  );
 };

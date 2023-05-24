@@ -16,13 +16,3 @@ export const knex = Knex({
 export const knexToObject = <T extends Dict>(item: T | undefined): T | undefined => (item ? { ...item } : undefined);
 
 export const knexToObjects = <T extends Dict>(rows: T[]): T[] => rows.map((item) => ({ ...item }));
-
-export const databaseLog = (
-  trx: any,
-  user: number,
-  table: string,
-  identifier: string | number,
-  type: "insert" | "update" | "delete"
-): Promise<void> => {
-  return trx("log").insert({ user, table, identifier, type });
-};

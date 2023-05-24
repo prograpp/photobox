@@ -10,6 +10,6 @@ const Document: React.FC<{}> = () => {
       </body>
     </Html>
   );
-}
+};
 
 export default Document;
