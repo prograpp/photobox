@@ -1,5 +1,5 @@
 import { ActionIcon, Box, Divider, Stack, Tooltip } from "@mantine/core";
-import { IconAlbum, IconPhoto, IconSettings, IconUser, IconUsers } from "@tabler/icons-react";
+import { IconAlbum, IconMap2, IconPhoto, IconSettings, IconUsers } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
@@ -27,6 +27,11 @@ export const Component_Nav: React.FC<{}> = () => {
       icon: <IconUsers size="2.125rem" />,
       href: "/persons",
       label: "Persons",
+    },
+    {
+      icon: <IconMap2 size="2.125rem" />,
+      href: "/locations",
+      label: "Locations",
     },
     "divider",
     {

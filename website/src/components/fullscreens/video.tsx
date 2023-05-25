@@ -1,5 +1,6 @@
 import { ActionIcon, Box, Center, Portal } from "@mantine/core";
 import { IconX } from "@tabler/icons-react";
+import mime from "mime";
 import path from "path";
 import React from "react";
 

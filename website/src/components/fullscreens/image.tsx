@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 import path from "path";
 import React, { useEffect, useState } from "react";
 
-const Map = dynamic(() => import("@/components/map"), { ssr: false });
+const Map = dynamic(() => import("./single-map"), { ssr: false });
 
 type Props = {
   path: string[];
